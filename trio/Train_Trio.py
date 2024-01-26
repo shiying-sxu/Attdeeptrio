@@ -239,7 +239,7 @@ def train_model_N1(args):
         bin_list = bin_list[:1]
         max_epoch = 2
     # default we exclude sample hg003 and all chr20 for training
-    bin_list = [f for f in bin_list if '_19_' not in f and not exist_file_prefix(exclude_training_samples, f)]###20
+    bin_list = [f for f in bin_list if '_20_' not in f and not exist_file_prefix(exclude_training_samples, f)]###20
 
 
 
@@ -572,7 +572,7 @@ def train_model_NN(args):
     bin_list = os.listdir(args.bin_fn)
 
     # default we exclude sample hg003 and all chr20 for training
-    bin_list = [f for f in bin_list if '_19_' not in f and not exist_file_prefix(exclude_training_samples, f)]
+    bin_list = [f for f in bin_list if '_20_' not in f and not exist_file_prefix(exclude_training_samples, f)]
 
     logging.info("[INFO] total {} training bin files: {}".format(len(bin_list), ','.join(bin_list)))
     total_data_size = 0
