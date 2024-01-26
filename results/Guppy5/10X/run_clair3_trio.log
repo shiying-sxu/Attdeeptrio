@@ -1,0 +1,3235 @@
+[0;94mClair3-Trio[0m (v0.6)
+-----
+[INFO] OUTPUT FOLDER: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X
+[INFO] BAM_C FILE PATH:  /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG002-chr20/20_10.bam
+[INFO] BAM_P1 FILE PATH: /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG003-chr20/20_10.bam
+[INFO] BAM_P2 FILE PATH: /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG004-chr20/20_10.bam
+[INFO] SAMPLE NAME CHILD:   HG002
+[INFO] SAMPLE NAME PARENT1: HG003
+[INFO] SAMPLE NAME PARENT2: HG004
+[INFO] REFERENCE FILE PATH: /work/Clair3-Trio-trio/data/clair3_trio_quick_demo/GRCh38_no_alt_chr20.fa
+[INFO] CLAIR3 MODEL PATH: /work/Clair3-Trio-trio/pretrainedmodel/r941_prom_sup_g5014
+[INFO] CLAIR3-TRIO MODEL PATH: /data2/Clair3-Trio-trio/data/model/ATT-trio/chr20-eham/new1368
+[INFO] CLAIR3-TRIO MODEL PREFIX: trio
+[INFO] PLATFORM: ont
+[INFO] THREADS: 40
+[INFO] BED FILE PATH: EMPTY
+[INFO] VCF FILE PATH: EMPTY
+[INFO] CONTIGS: EMPTY
+[INFO] CONDA PREFIX: /home/user/anaconda3/envs/atttrio
+[INFO] SAMTOOLS PATH: samtools
+[INFO] PYTHON PATH: python3
+[INFO] PYPY PATH: pypy3
+[INFO] PARALLEL PATH: parallel
+[INFO] WHATSHAP PATH: whatshap
+[INFO] CHUNK SIZE: 5000000
+[INFO] FULL ALIGN PROPORTION: 0.3
+[INFO] FULL ALIGN REFERENCE PROPORTION: 0.1
+[INFO] PHASING PROPORTION: 0.8
+[INFO] ENABLE PILEUP CALLING AND PHASING: False
+[INFO] ENABLE PRINTING REFERENCE CALLS: True
+[INFO] ENABLE OUTPUT GVCF: False
+[INFO] ENABLE INCLUDE ALL CTGS CALLING: False
+[INFO] ENABLE PHASING VCF OUTPUT: True
+[INFO] ENABLE HAPLOTAGGING BAM OUTPUT: False
+
++ ./trio/Call_Clair3_Trio.sh --bam_fn_c /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG002-chr20/20_10.bam --bam_fn_p1 /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG003-chr20/20_10.bam --bam_fn_p2 /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG004-chr20/20_10.bam --ref_fn /work/Clair3-Trio-trio/data/clair3_trio_quick_demo/GRCh38_no_alt_chr20.fa --threads 40 --model_path_clair3 /work/Clair3-Trio-trio/pretrainedmodel/r941_prom_sup_g5014 --model_path_clair3_trio /data2/Clair3-Trio-trio/data/model/ATT-trio/chr20-eham/new1368 --platform ont --output /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X --bed_fn=EMPTY --vcf_fn=EMPTY --ctg_name=EMPTY --sample_name_c=HG002 --sample_name_p1=HG003 --sample_name_p2=HG004 --chunk_num=0 --chunk_size=5000000 --samtools=samtools --python=python3 --pypy=pypy3 --parallel=parallel --whatshap=whatshap --qual=2 --var_pct_full=0.3 --ref_pct_full=0.1 --var_pct_phasing=0.8 --snp_min_af=0 --indel_min_af=0 --pileup_only=False --pileup_phasing=False --gvcf=False --fast_mode=False --call_snp_only=False --print_ref_calls=True --haploid_precise=False --haploid_sensitive=False --include_all_ctgs=False --no_phasing_for_fa=False --pileup_model_prefix=pileup --trio_model_prefix=trio --remove_intermediate_dir=False --enable_phasing=True --enable_output_haplotagging=False --enable_long_indel=False
+[TRIO INFO] * Clir3-Trio pipeline start
+[TRIO INFO] * 0 Check environment variables
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/log
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/gvcf_tmp_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/HG002
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/HG003
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/HG004
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004
+[INFO] --include_all_ctgs not enabled, use chr{1..22,X,Y} and {1..22,X,Y} by default
+[INFO] Call variant in contigs: chr20
+[INFO] Chunk number for each contig: 13
+[TRIO INFO] * 1 call variants using pileup model
+trio sample HG002 HG003 HG004
+trio bam /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG002-chr20/20_10.bam /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG003-chr20/20_10.bam /data2/Clair3-Trio-trio/data/subsample/Guppy5/HG004-chr20/20_10.bam
+pileup threads 13
+running pileup model
+[INFO] Check environment variables
+[INFO] --include_all_ctgs not enabled, use chr{1..22,X,Y} and {1..22,X,Y} by default
+[INFO] Call variant in contigs: chr20
+[INFO] Chunk number for each contig: 13
+[INFO] 1/7 Call variants using pileup model
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Total processed positions in chr20 (chunk 6/13) : 717775
+Total time elapsed: 2547.08 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Total processed positions in chr20 (chunk 2/13) : 1077043
+Total time elapsed: 3097.64 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Total processed positions in chr20 (chunk 3/13) : 1157961
+Total time elapsed: 3229.16 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Total processed positions in chr20 (chunk 7/13) : 1051651
+Total time elapsed: 3311.36 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Total processed positions in chr20 (chunk 4/13) : 1157756
+Total time elapsed: 3614.37 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Total processed positions in chr20 (chunk 1/13) : 1203683
+Total time elapsed: 3633.11 s
+[INFO] Delay 2 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Total processed positions in chr20 (chunk 8/13) : 1147104
+Total time elapsed: 3667.36 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Total processed positions in chr20 (chunk 9/13) : 1118380
+Total time elapsed: 3815.76 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Total processed positions in chr20 (chunk 5/13) : 1155593
+Total time elapsed: 3869.76 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Total processed positions in chr20 (chunk 10/13) : 1200739
+Total time elapsed: 3473.37 s
+[INFO] Delay 2 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Total processed positions in chr20 (chunk 11/13) : 1158049
+Total time elapsed: 2939.88 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Total processed positions in chr20 (chunk 12/13) : 1149343
+Total time elapsed: 3064.71 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[faidx] Truncated sequence: chr20:59485928-64445172
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Total processed positions in chr20 (chunk 13/13) : 1260651
+Total time elapsed: 3306.47 s
+
+[INFO] 2/7 Select heterozygous SNP variants for Whatshap phasing and haplotagging
+[INFO] Select heterozygous pileup variants exceeding phasing quality cutoff 7
+[INFO] Total heterozygous SNP positions selected: chr20: 86986
+
+[INFO] 3/7 Phase VCF file using Whatshap
+This is WhatsHap 1.7 running under Python 3.9.0
+Working on 1 sample from 1 family
+
+# Working on contig chr20 in individual HG004
+Found 86986 usable heterozygous variants (0 skipped due to missing genotypes)
+Found 23545 reads covering 82205 variants
+Kept 20203 reads that cover at least two variants each
+Selected 19443 most phase-informative reads covering 82205 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 13858 variants (16.9% of accessible variants) between position 35514748 and 54924309
+Changed 2191 genotypes while writing VCF
+
+# Resource usage
+Maximum memory usage: 0.384 GB
+Time spent reading BAM/CRAM:                   35.5 s
+Time spent parsing VCF:                         1.8 s
+Time spent selecting reads:                    11.1 s
+Time spent phasing:                           103.1 s
+Time spent writing VCF:                         3.5 s
+Time spent finding components:                  2.7 s
+Time spent on rest:                             5.0 s
+Total elapsed time:                           162.7 s
+
+[INFO] 4/7 Haplotag input BAM file using Whatshap
+Found 1 sample(s) in input VCF
+Found 0 sample(s) in BAM file
+Found 23215 reads covering 76286 variants
+
+== SUMMARY ==
+Total alignments processed:                     46139
+Alignments that could be tagged:                22949
+Alignments spanning multiple phase sets:            0
+Finished in 90.0 s
+[INFO] Only call pileup output and phasing, output file: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/pileup.vcf.gz
+[INFO] SAMPLE HG004 Finish calling!
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/log
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/pileup_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/merge_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/phase_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/gvcf_tmp_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/full_alignment_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/phase_output/phase_vcf
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/phase_output/phase_bam
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG004/tmp/full_alignment_output/candidate_bed
+
+real	110m45.876s
+user	665m52.689s
+sys	21m17.322s
+
+real	0m23.951s
+user	0m22.907s
+sys	0m0.639s
+
+real	2m43.706s
+user	2m41.523s
+sys	0m1.552s
+
+real	1m30.619s
+user	1m27.596s
+sys	0m2.244s
+[INFO] Check environment variables
+[INFO] --include_all_ctgs not enabled, use chr{1..22,X,Y} and {1..22,X,Y} by default
+[INFO] Call variant in contigs: chr20
+[INFO] Chunk number for each contig: 13
+[INFO] 1/7 Call variants using pileup model
+[INFO] Delay 2 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Total processed positions in chr20 (chunk 6/13) : 735170
+Total time elapsed: 2326.74 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Total processed positions in chr20 (chunk 2/13) : 1195336
+Total time elapsed: 3550.73 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Total processed positions in chr20 (chunk 9/13) : 1169777
+Total time elapsed: 3786.32 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Total processed positions in chr20 (chunk 5/13) : 1211935
+Total time elapsed: 3822.33 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Total processed positions in chr20 (chunk 7/13) : 1173045
+Total time elapsed: 3888.44 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Total processed positions in chr20 (chunk 4/13) : 1264636
+Total time elapsed: 3947.87 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Total processed positions in chr20 (chunk 1/13) : 1176245
+Total time elapsed: 3988.64 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Total processed positions in chr20 (chunk 3/13) : 1253742
+Total time elapsed: 4023.71 s
+[INFO] Delay 2 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Total processed positions in chr20 (chunk 8/13) : 1304676
+Total time elapsed: 4191.28 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Total processed positions in chr20 (chunk 10/13) : 1289320
+Total time elapsed: 3521.70 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[faidx] Truncated sequence: chr20:59485928-64445172
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Total processed positions in chr20 (chunk 13/13) : 1276773
+Total time elapsed: 3043.36 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Total processed positions in chr20 (chunk 11/13) : 1296410
+Total time elapsed: 3541.28 s
+[INFO] Delay 2 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Total processed positions in chr20 (chunk 12/13) : 1298241
+Total time elapsed: 3371.17 s
+
+[INFO] 2/7 Select heterozygous SNP variants for Whatshap phasing and haplotagging
+[INFO] Select heterozygous pileup variants exceeding phasing quality cutoff 7
+[INFO] Total heterozygous SNP positions selected: chr20: 84358
+
+[INFO] 3/7 Phase VCF file using Whatshap
+This is WhatsHap 1.7 running under Python 3.9.0
+Working on 1 sample from 1 family
+
+# Working on contig chr20 in individual HG002
+Found 84358 usable heterozygous variants (0 skipped due to missing genotypes)
+Found 22057 reads covering 79912 variants
+Kept 19281 reads that cover at least two variants each
+Selected 18511 most phase-informative reads covering 79912 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 10285 variants (12.9% of accessible variants) between position 44166949 and 56974878
+Changed 3012 genotypes while writing VCF
+
+# Resource usage
+Maximum memory usage: 0.355 GB
+Time spent reading BAM/CRAM:                   31.0 s
+Time spent parsing VCF:                         1.4 s
+Time spent selecting reads:                     8.0 s
+Time spent phasing:                            65.9 s
+Time spent writing VCF:                         2.1 s
+Time spent finding components:                  1.7 s
+Time spent on rest:                             2.8 s
+Total elapsed time:                           112.9 s
+
+[INFO] 4/7 Haplotag input BAM file using Whatshap
+Found 1 sample(s) in input VCF
+Found 0 sample(s) in BAM file
+Found 21717 reads covering 73132 variants
+
+== SUMMARY ==
+Total alignments processed:                     45546
+Alignments that could be tagged:                21365
+Alignments spanning multiple phase sets:            0
+Finished in 68.3 s
+[INFO] Only call pileup output and phasing, output file: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/pileup.vcf.gz
+[INFO] SAMPLE HG002 Finish calling!
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/log
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/pileup_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/merge_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/phase_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/gvcf_tmp_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/full_alignment_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/phase_output/phase_vcf
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/phase_output/phase_bam
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG002/tmp/full_alignment_output/candidate_bed
+
+real	119m41.455s
+user	723m3.579s
+sys	20m22.923s
+
+real	0m19.962s
+user	0m19.273s
+sys	0m0.509s
+
+real	1m53.589s
+user	1m51.148s
+sys	0m1.319s
+
+real	1m8.886s
+user	1m5.079s
+sys	0m1.592s
+[INFO] Check environment variables
+[INFO] --include_all_ctgs not enabled, use chr{1..22,X,Y} and {1..22,X,Y} by default
+[INFO] Call variant in contigs: chr20
+[INFO] Chunk number for each contig: 13
+[INFO] 1/7 Call variants using pileup model
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Total processed positions in chr20 (chunk 6/13) : 805070
+Total time elapsed: 2490.49 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Total processed positions in chr20 (chunk 7/13) : 1220839
+Total time elapsed: 3686.54 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Total processed positions in chr20 (chunk 3/13) : 1197433
+Total time elapsed: 3727.29 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Total processed positions in chr20 (chunk 4/13) : 1278327
+Total time elapsed: 3858.23 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Processed 1320000 tensors
+Total processed positions in chr20 (chunk 1/13) : 1329422
+Total time elapsed: 3994.96 s
+[INFO] Delay 4 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Total processed positions in chr20 (chunk 9/13) : 1277565
+Total time elapsed: 4103.11 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Total processed positions in chr20 (chunk 2/13) : 1235377
+Total time elapsed: 4121.77 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Processed 1320000 tensors
+Total processed positions in chr20 (chunk 5/13) : 1324945
+Total time elapsed: 4186.70 s
+[INFO] Delay 3 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Total processed positions in chr20 (chunk 8/13) : 1309809
+Total time elapsed: 4244.24 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Total processed positions in chr20 (chunk 10/13) : 1311315
+Total time elapsed: 3585.82 s
+[INFO] Delay 1 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Total processed positions in chr20 (chunk 12/13) : 1317817
+Total time elapsed: 3328.19 s
+[INFO] Delay 2 seconds before starting variant calling ...
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Total processed positions in chr20 (chunk 11/13) : 1307343
+Total time elapsed: 3454.51 s
+[INFO] Delay 0 seconds before starting variant calling ...
+[faidx] Truncated sequence: chr20:59485928-64445172
+[mpileup] 1 samples in 1 input files
+Calling variants ...
+Processed 20000 tensors
+Processed 40000 tensors
+Processed 60000 tensors
+Processed 80000 tensors
+Processed 100000 tensors
+Processed 120000 tensors
+Processed 140000 tensors
+Processed 160000 tensors
+Processed 180000 tensors
+Processed 200000 tensors
+Processed 220000 tensors
+Processed 240000 tensors
+Processed 260000 tensors
+Processed 280000 tensors
+Processed 300000 tensors
+Processed 320000 tensors
+Processed 340000 tensors
+Processed 360000 tensors
+Processed 380000 tensors
+Processed 400000 tensors
+Processed 420000 tensors
+Processed 440000 tensors
+Processed 460000 tensors
+Processed 480000 tensors
+Processed 500000 tensors
+Processed 520000 tensors
+Processed 540000 tensors
+Processed 560000 tensors
+Processed 580000 tensors
+Processed 600000 tensors
+Processed 620000 tensors
+Processed 640000 tensors
+Processed 660000 tensors
+Processed 680000 tensors
+Processed 700000 tensors
+Processed 720000 tensors
+Processed 740000 tensors
+Processed 760000 tensors
+Processed 780000 tensors
+Processed 800000 tensors
+Processed 820000 tensors
+Processed 840000 tensors
+Processed 860000 tensors
+Processed 880000 tensors
+Processed 900000 tensors
+Processed 920000 tensors
+Processed 940000 tensors
+Processed 960000 tensors
+Processed 980000 tensors
+Processed 1000000 tensors
+Processed 1020000 tensors
+Processed 1040000 tensors
+Processed 1060000 tensors
+Processed 1080000 tensors
+Processed 1100000 tensors
+Processed 1120000 tensors
+Processed 1140000 tensors
+Processed 1160000 tensors
+Processed 1180000 tensors
+Processed 1200000 tensors
+Processed 1220000 tensors
+Processed 1240000 tensors
+Processed 1260000 tensors
+Processed 1280000 tensors
+Processed 1300000 tensors
+Processed 1320000 tensors
+Processed 1340000 tensors
+Processed 1360000 tensors
+Total processed positions in chr20 (chunk 13/13) : 1369257
+Total time elapsed: 3352.88 s
+
+[INFO] 2/7 Select heterozygous SNP variants for Whatshap phasing and haplotagging
+[INFO] Select heterozygous pileup variants exceeding phasing quality cutoff 7
+[INFO] Total heterozygous SNP positions selected: chr20: 89587
+
+[INFO] 3/7 Phase VCF file using Whatshap
+This is WhatsHap 1.7 running under Python 3.9.0
+Working on 1 sample from 1 family
+
+# Working on contig chr20 in individual HG003
+Found 89587 usable heterozygous variants (0 skipped due to missing genotypes)
+Found 24703 reads covering 86376 variants
+Kept 21039 reads that cover at least two variants each
+Selected 20237 most phase-informative reads covering 86376 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 11157 variants (12.9% of accessible variants) between position 44444066 and 59107832
+Changed 2119 genotypes while writing VCF
+
+# Resource usage
+Maximum memory usage: 0.379 GB
+Time spent reading BAM/CRAM:                   31.8 s
+Time spent parsing VCF:                         1.7 s
+Time spent selecting reads:                     7.7 s
+Time spent phasing:                            85.5 s
+Time spent writing VCF:                         2.8 s
+Time spent finding components:                  1.9 s
+Time spent on rest:                             2.9 s
+Total elapsed time:                           134.3 s
+
+[INFO] 4/7 Haplotag input BAM file using Whatshap
+Found 1 sample(s) in input VCF
+Found 0 sample(s) in BAM file
+Found 24359 reads covering 80897 variants
+
+== SUMMARY ==
+Total alignments processed:                     51163
+Alignments that could be tagged:                24027
+Alignments spanning multiple phase sets:            0
+Finished in 70.2 s
+[INFO] Only call pileup output and phasing, output file: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/pileup.vcf.gz
+[INFO] SAMPLE HG003 Finish calling!
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/log
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/pileup_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/merge_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/phase_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/gvcf_tmp_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/full_alignment_output
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/phase_output/phase_vcf
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/phase_output/phase_bam
+[INFO] Create folder /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/pileup_output/HG003/tmp/full_alignment_output/candidate_bed
+
+real	120m33.695s
+user	744m17.446s
+sys	19m23.897s
+
+real	0m20.864s
+user	0m20.033s
+sys	0m0.588s
+
+real	2m15.042s
+user	2m13.225s
+sys	0m1.455s
+
+real	1m10.922s
+user	1m7.113s
+sys	0m1.383s
+[TRIO INFO] Finish Pileup model
+[TRIO INFO] 2 Select Trio Candidates
+DEPTH 1000
+[ORI C] HG002_TRIO chr20 select ref calling (cutoff 11.27) to process: 463896
+[ORI C] HG002_TRIO chr20 select variant calling (cutoff 31.52) to process: 181935
+[ORI P1] HG002_TRIO chr20 select ref calling (cutoff 11.32) to process: 482937
+[ORI P1] HG002_TRIO chr20 select variant calling (cutoff 29.56) to process: 186498
+[ORI P2] HG002_TRIO chr20 select ref calling (cutoff 11.32) to process: 431052
+[ORI P2] HG002_TRIO chr20 select variant calling (cutoff 32.22) to process: 187196
+check ref site, 1260220 or maximum 607208 (ind 222250)
+using maximum ref/var ratio 1.2
+ori avg v: 185209, ref: 459295, new union: v 320012, ref 607208 (48.18% /1260220)
+total site 868056
+
+real	2m32.235s
+user	2m41.562s
+sys	0m11.626s
+[TRIO INFO] * 3 Call Clair3-Trio model
+run callvarbam
+[INFO] Delay 3 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.10_29 trio sites [25514, 26692, 28216], valid 21794/25514 (85.42%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 11/29) : 21792
+run callvarbam
+[INFO] Delay 1 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.12_29 trio sites [24601, 28759, 25286], valid 23761/24601 (96.59%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 13/29) : 23761
+run callvarbam
+[INFO] Delay 3 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.11_29 trio sites [27828, 29996, 26882], valid 25772/27828 (92.61%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 12/29) : 25772
+run callvarbam
+[INFO] Delay 2 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.13_29 trio sites [30000, 29995, 28376], valid 28376/30000 (94.59%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 14/29) : 28376
+run callvarbam
+[INFO] Delay 4 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.18_29 trio sites [29998, 30000, 30000], valid 29998/29998 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 19/29) : 29998
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.15_29 trio sites [29305, 27942, 29995], valid 27728/29305 (94.62%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 16/29) : 27727
+run callvarbam
+[INFO] Delay 4 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.26_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 27/29) : 30000
+run callvarbam
+[INFO] Delay 1 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.28_29 trio sites [28056, 28056, 28056], valid 28056/28056 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 29/29) : 28056
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.9_29 trio sites [30000, 29993, 29113], valid 29113/30000 (97.04%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 10/29) : 29113
+run callvarbam
+[INFO] Delay 4 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.0_29 trio sites [29394, 29987, 29874], valid 29381/29394 (99.96%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 1/29) : 29381
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.1_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 2/29) : 30000
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.25_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 26/29) : 30000
+run callvarbam
+[INFO] Delay 4 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.8_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 9/29) : 30000
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.14_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 15/29) : 30000
+run callvarbam
+[INFO] Delay 2 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.3_29 trio sites [30000, 29997, 30000], valid 29997/30000 (99.99%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 4/29) : 29997
+run callvarbam
+[INFO] Delay 2 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.17_29 trio sites [30000, 29973, 30000], valid 29973/30000 (99.91%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 18/29) : 29973
+run callvarbam
+[INFO] Delay 1 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.7_29 trio sites [30000, 29982, 29996], valid 29979/30000 (99.93%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 8/29) : 29979
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.27_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 28/29) : 30000
+run callvarbam
+[INFO] Delay 2 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.24_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 25/29) : 30000
+run callvarbam
+[INFO] Delay 2 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.20_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 21/29) : 30000
+run callvarbam
+[INFO] Delay 1 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.4_29 trio sites [30000, 29999, 29996], valid 29996/30000 (99.99%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 5/29) : 29996
+run callvarbam
+[INFO] Delay 1 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.16_29 trio sites [29953, 29953, 30000], valid 29952/29953 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 17/29) : 29953
+run callvarbam
+[INFO] Delay 1 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.6_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 7/29) : 30000
+run callvarbam
+[INFO] Delay 2 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.22_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 23/29) : 30000
+run callvarbam
+[INFO] Delay 0 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.2_29 trio sites [30000, 29999, 29997], valid 29997/30000 (99.99%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 3/29) : 29997
+run callvarbam
+[INFO] Delay 3 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.21_29 trio sites [30000, 29996, 30000], valid 29996/30000 (99.99%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 22/29) : 29996
+run callvarbam
+[INFO] Delay 4 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.5_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 6/29) : 30000
+run callvarbam
+[INFO] Delay 3 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.19_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 20/29) : 30000
+run callvarbam
+[INFO] Delay 4 seconds before starting variant calling ...
+INFO:root:run MergeTensorsBAM_Trio
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[INFO] Make prediction ...
+Calling variants ...
+Processed 20000 tensors
+INFO:root:/data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/tmp/trio_output/candidate_bed/chr20.23_29 trio sites [30000, 30000, 30000], valid 30000/30000 (100.00%)
+INFO:root:Finish!
+Total processed positions in chr20 (chunk 24/29) : 30000
+
+real	93m16.878s
+user	1474m2.542s
+sys	80m59.155s
+
+[TRIO INFO] * 4 Merge trio VCF
+[INFO] Pileup variants processed in chr20: 13989144
+[INFO] Trio variants processed in chr20: 839968
+[INFO] Pileup variants processed in chr20: 15070378
+[INFO] Trio variants processed in chr20: 840215
+[INFO] Pileup variants processed in chr20: 15705930
+[INFO] Trio variants processed in chr20: 840317
+
+real	1m39.534s
+user	3m51.355s
+sys	0m15.685s
+[INFO] Phasing VCF output in parallel using WhatsHap
+This is WhatsHap 1.7 running under Python 3.9.0
+Working on 1 sample from 1 family
+
+# Working on contig chr20 in individual HG002
+Found 77339 usable heterozygous variants (0 skipped due to missing genotypes)
+Found 20808 reads covering 76520 variants
+Kept 17863 reads that cover at least two variants each
+Selected 17204 most phase-informative reads covering 76511 variants
+Best-case phasing would result in 66 non-singleton phased blocks (0 singletons). 
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 6779 variants (8.9% of accessible variants) between position 47739421 and 54722723
+
+# Resource usage
+Maximum memory usage: 0.390 GB
+Time spent reading BAM/CRAM:                   64.7 s
+Time spent parsing VCF:                       101.8 s
+Time spent selecting reads:                    14.1 s
+Time spent phasing:                           104.1 s
+Time spent writing VCF:                       335.8 s
+Time spent finding components:                  3.4 s
+Time spent on rest:                           185.1 s
+Total elapsed time:                           809.0 s
+This is WhatsHap 1.7 running under Python 3.9.0
+Working on 1 sample from 1 family
+
+# Working on contig chr20 in individual HG004
+Found 82460 usable heterozygous variants (0 skipped due to missing genotypes)
+Found 22715 reads covering 81389 variants
+Kept 19488 reads that cover at least two variants each
+Selected 18733 most phase-informative reads covering 81385 variants
+Best-case phasing would result in 59 non-singleton phased blocks (0 singletons). 
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 8584 variants (10.5% of accessible variants) between position 56307425 and 64333832
+
+# Resource usage
+Maximum memory usage: 0.430 GB
+Time spent reading BAM/CRAM:                   68.7 s
+Time spent parsing VCF:                        96.7 s
+Time spent selecting reads:                    15.7 s
+Time spent phasing:                           131.5 s
+Time spent writing VCF:                       320.6 s
+Time spent finding components:                  3.3 s
+Time spent on rest:                           178.5 s
+Total elapsed time:                           815.0 s
+This is WhatsHap 1.7 running under Python 3.9.0
+Working on 1 sample from 1 family
+
+# Working on contig chr20 in individual HG003
+Found 80074 usable heterozygous variants (0 skipped due to missing genotypes)
+Found 23543 reads covering 79133 variants
+Kept 19936 reads that cover at least two variants each
+Selected 19216 most phase-informative reads covering 79129 variants
+Best-case phasing would result in 68 non-singleton phased blocks (0 singletons). 
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 8930 variants (11.3% of accessible variants) between position 68303 and 7420961
+
+# Resource usage
+Maximum memory usage: 0.400 GB
+Time spent reading BAM/CRAM:                   67.6 s
+Time spent parsing VCF:                       101.1 s
+Time spent selecting reads:                    16.2 s
+Time spent phasing:                           124.2 s
+Time spent writing VCF:                       349.8 s
+Time spent finding components:                  4.1 s
+Time spent on rest:                           196.8 s
+Total elapsed time:                           859.7 s
+
+real	14m21.631s
+user	36m55.475s
+sys	0m29.779s
+[INFO] Finish Phasing calling, output phased VCF file: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/phased_*.vcf.gz
+
+[INFO] Finish calling, output VCF file [Child]: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/HG002.vcf.gz
+[INFO] Finish calling, output VCF file [Parent 1]: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/HG003.vcf.gz
+[INFO] Finish calling, output VCF file [Parent 2]: /data2/Clair3-Trio-trio/data/trio_quick_demo/GUPPY5/CHR20-testoutput/CHR20-EHAM/new1368/10X/HG004.vcf.gz
+
+real	241m26.916s
+user	3675m3.821s
+sys	144m50.917s
